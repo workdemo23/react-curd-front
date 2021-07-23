@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const TodoList = () => {    
-    //let [account, setAccount] = useState({todos: []});
-    //const initialList = [];
+    //let [account, setAccount] = useState({todos: []});    
     const [list, setList] = useState({todos: []});
     const getList = () =>{
         axios.get('http://localhost:4000/todos/')
