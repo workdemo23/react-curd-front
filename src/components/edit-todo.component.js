@@ -21,7 +21,7 @@ const TodoEdit = (props) => {
             })
             .catch(function (error){
                 console.log(error);
-            })
+            });
     };
 
     useEffect(() => {
@@ -35,10 +35,13 @@ const TodoEdit = (props) => {
     }
 
     let handleChange = (e) => {
-        let name = e.target.name;
+        /*let name = e.target.name;
         let value = e.target.value;
         account[name] = value;
-        setAccount(account);
+        setAccount(account);*/
+        const { name, value } = e.target
+
+        setAccount({ ...account, [name]: value })
     }
 
     return (
@@ -66,7 +69,7 @@ const TodoEdit = (props) => {
                     </div>                    
 
                     <div className="form-group">
-                        <input type="submit" value="Create Todo" className="btn btn-primary" />
+                        <input type="submit" value="Save Todo" className="btn btn-primary" />
                     </div>
                 </form>
             </div>
