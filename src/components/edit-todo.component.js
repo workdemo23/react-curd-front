@@ -31,7 +31,19 @@ const TodoEdit = (props) => {
    let onSubmit = (e) => {
         e.preventDefault();
         console.log("ok");
-        console.log(account);        
+        console.log(account);
+        axios.post('http://localhost:4000/todos/update/'+props.match.params.id,account)
+        .then(res => {console.log(res.data);
+            alert('Record Updated successfully.');
+            });
+
+        /*setAccount({
+            todo_description: '',
+            todo_responsible: '',
+            todo_priority: 'low',
+            todo_completed: false
+          });  */
+          props.history.push('/');            
     }
 
     let handleChange = (e) => {

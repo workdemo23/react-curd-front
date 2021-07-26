@@ -16,7 +16,9 @@ const TodoAdd = (props) => {
             console.log(account);
 
             axios.post('http://localhost:4000/todos/add',account)
-            .then(res => console.log(res.data));
+            .then(res => {console.log(res.data);
+                alert("Record added successfully.")
+            });
 
             setAccount({
                 todo_description: '',
